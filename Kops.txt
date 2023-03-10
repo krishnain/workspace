@@ -34,8 +34,8 @@ Open .bashrc file
 	vi ~/.bashrc
 Add following content into .bashrc, you can choose any arbitary name for cluster and make sure buck name matches the one you created in previous step.
 
-export KOPS_CLUSTER_NAME=ameerpet.in
-export KOPS_STATE_STORE=s3://ameerpet.in.k8s
+export KOPS_CLUSTER_NAME=intel1.in
+export KOPS_STATE_STORE=s3://intel1.in.k8s
 Then running command to reflect variableys added to .bashrc
 
 	source ~/.bashrc
@@ -47,8 +47,8 @@ ssh-keygen
 kops create cluster \
 --state=${KOPS_STATE_STORE} \
 --node-count=2 \
---master-size=t3.medium \
---node-size=t3.medium \
+--master-size=t3a.large \
+--node-size=t3a.large \
 --zones=us-west-1b \
 --name=${KOPS_CLUSTER_NAME} \
 --dns private \
